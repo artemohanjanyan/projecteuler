@@ -1,4 +1,4 @@
-module P003 (factorization, factors) where
+module P003 (factorization, factors, main) where
 
 import P007 (primes)
 

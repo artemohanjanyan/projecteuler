@@ -1,4 +1,4 @@
-module P004 (isPalindrome) where
+module P004 (isPalindrome, main) where
 
 isPalindrome :: Show a => a -> Bool
 isPalindrome n = show n == reverse (show n)
