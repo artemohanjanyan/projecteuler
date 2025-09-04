@@ -1,0 +1,37 @@
+asText :: Int -> String
+asText 0 = "zero"
+asText 1 = "one"
+asText 2 = "two"
+asText 3 = "three"
+asText 4 = "four"
+asText 5 = "five"
+asText 6 = "six"
+asText 7 = "seven"
+asText 8 = "eight"
+asText 9 = "nine"
+asText 10 = "ten"
+asText 11 = "eleven"
+asText 12 = "twelve"
+asText 13 = "thirteen"
+asText 14 = "fourteen"
+asText 15 = "fifteen"
+asText 16 = "sixteen"
+asText 17 = "seventeen"
+asText 18 = "eighteen"
+asText 19 = "nineteen"
+asText 20 = "twenty"
+asText 30 = "thirty"
+asText 40 = "forty"
+asText 50 = "fifty"
+asText 60 = "sixty"
+asText 70 = "seventy"
+asText 80 = "eighty"
+asText 90 = "ninety"
+asText 1000 = "one thousand"
+asText n
+  | n < 100 = asText (n - n `mod` 10) ++ " " ++ asText (n `mod` 10)
+  | n `mod` 100 == 0 = asText (n `div` 100) ++ " hundred"
+  | n < 1000 = asText (n - n `mod` 100) ++ " and " ++ asText (n `mod` 100)
+  | otherwise = "nope"
+
+main = print $ length $ filter (/= ' ') $ concat $ map asText [1..1000]
